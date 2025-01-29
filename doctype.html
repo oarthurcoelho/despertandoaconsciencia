@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz: Preparação Espiritual para o Conhecimento Hermético</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #4A90E2;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .question p {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .answers {
+            list-style-type: none;
+            padding: 0;
+        }
+        .answers li {
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #4A90E2;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #357ABD;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #4A90E2;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz: Preparação Espiritual para o Conhecimento Hermético</h1>
+        <form id="quiz-form">
+            <div class="question">
+                <p>1. Você já praticou meditação ou outras formas de autoconhecimento?</p>
+                <ul class="answers">
+                    <li><input type="radio" name="q1" value="1"> Sim, frequentemente</li>
+                    <li><input type="radio" name="q1" value="0"> Não, mas estou aberto(a) a isso</li>
+                    <li><input type="radio" name="q1" value="-1"> Não, e não tenho interesse</li>
+                </ul>
+            </div>
+            <div class="question">
+                <p>2. Você sente uma conexão profunda com algo maior que você, como o universo ou uma força superior?</p>
+                <ul class="answers">
+                    <li><input type="radio" name="q2" value="1"> Sim, frequentemente</li>
+                    <li><input type="radio" name="q2" value="0"> Às vezes, mas não com frequência</li>
+                    <li><input type="radio" name="q2" value="-1"> Não, nunca senti isso</li>
+                </ul>
+            </div>
+            <div class="question">
+                <p>3. Você já estudou filosofias ou práticas espirituais que buscam autotransformação?</p>
+                <ul class="answers">
+                    <li><input type="radio" name="q3" value="1"> Sim, estou constantemente buscando conhecimento espiritual</li>
+                    <li><input type="radio" name="q3" value="0"> Já tentei, mas não me aprofundei</li>
+                    <li><input type="radio" name="q3" value="-1"> Não, nunca me interessei por isso</li>
+                </ul>
+            </div>
+            <div class="question">
+                <p>4. Você está disposto(a) a dedicar tempo e esforço para estudar ensinamentos profundos e complexos?</p>
+                <ul class="answers">
+                    <li><input type="radio" name="q4" value="1"> Sim, estou comprometido(a) com meu crescimento espiritual</li>
+                    <li><input type="radio" name="q4" value="0"> Depende da complexidade e da demanda</li>
+                    <li><input type="radio" name="q4" value="-1"> Não, prefiro conteúdos mais simples e diretos</li>
+                </ul>
+            </div>
+            <div class="question">
+                <p>5. Você já passou por momentos de grande reflexão ou crise existencial que ajudaram no seu desenvolvimento pessoal?</p>
+                <ul class="answers">
+                    <li><input type="radio" name="q5" value="1"> Sim, esses momentos foram cruciais para o meu crescimento</li>
+                    <li><input type="radio" name="q5" value="0"> Já tive alguns momentos, mas não sei se foram significativos</li>
+                    <li><input type="radio" name="q5" value="-1"> Não, nunca passei por isso</li>
+                </ul>
+            </div>
+            <div class="question">
+                <p>6. Você se sente confortável com a ideia de mistérios e conhecimentos secretos, e está disposto(a) a revelar a verdade interior?</p>
+                <ul class="answers">
+                    <li><input type="radio" name="q6" value="1"> Sim, estou pronto(a) para enfrentar a verdade profunda</li>
+                    <li><input type="radio" name="q6" value="0"> Acho interessante, mas tenho receios</li>
+                    <li><input type="radio" name="q6" value="-1"> Não, prefiro não mexer com segredos espirituais</li>
+                </ul>
+            </div>
+            <button type="submit">Ver Resultado</button>
+        </form>
+
+        <div class="result" id="result" style="display: none;"></div>
+    </div>
+
+    <script>
+        document.getElementById('quiz-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            let score = 0;
+            const answers = document.querySelectorAll('input[type="radio"]:checked');
+            
+            answers.forEach(function(answer) {
+                score += parseInt(answer.value);
+            });
+
+            let resultText = '';
+            if (score >= 4) {
+                resultText = 'Você está bem preparado(a) espiritualmente para começar o estudo do conhecimento hermético.';
+            } else if (score >= 0) {
+                resultText = 'Você está em processo de preparação. Continue seu caminho de autoconhecimento.';
+            } else {
+                resultText = 'Você ainda precisa de mais reflexão e preparação espiritual antes de adentrar no conhecimento hermético.';
+            }
+
+            document.getElementById('result').innerText = resultText;
+            document.getElementById('result').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
